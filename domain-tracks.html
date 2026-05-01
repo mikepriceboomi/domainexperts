@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Domain Expert Tracks — Boomi Cross-Training</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, sans-serif; background: #f5f7f9; color: #02283B; padding: 1.5rem; }
+  .track-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.25rem; }
+  .tab {
+    padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700;
+    cursor: pointer; border: 1.5px solid #d8e0e8; background: #fff;
+    color: #02283B; letter-spacing: .03em; transition: all .15s;
+  }
+  .tab:hover { border-color: #ff7c66; color: #ff7c66; }
+  .tab.active { background: #02283B; color: #fff; border-color: #02283B; }
+  .track-panel { display: none; }
+  .track-panel.active { display: block; }
+  .track-header { margin-bottom: 1rem; }
+  .track-title { font-size: 16px; font-weight: 700; color: #02283B; margin-bottom: 4px; }
+  .track-meta { font-size: 12px; color: #4a6070; line-height: 1.5; }
+  .courses { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: .75rem; }
+  .course-card {
+    background: #fff; border: 1px solid #d8e0e8; border-radius: 10px;
+    padding: 1rem; display: flex; flex-direction: column; gap: 8px;
+    transition: border-color .15s;
+  }
+  .course-card:hover { border-color: #ff7c66; }
+  .course-card.tbd { border-style: dashed; }
+  .course-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+  .course-name { font-size: 13px; font-weight: 700; color: #02283B; line-height: 1.4; flex: 1; }
+  .badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; white-space: nowrap; flex-shrink: 0; }
+  .badge-f { background: #e1f5ee; color: #085041; }
+  .badge-i { background: #faeeda; color: #633806; }
+  .badge-a { background: #faece7; color: #712B13; }
+  .badge-d { background: #f0f0f0; color: #555; }
+  .course-dur { font-size: 11px; color: #4a6070; }
+  .course-tbd-note { font-size: 11px; color: #888; }
+  .course-link {
+    display: inline-block; font-size: 11px; font-weight: 700;
+    color: #ff7c66; text-decoration: none; margin-top: 2px;
+  }
+  .course-link:hover { text-decoration: underline; }
+  .divider { height: 1px; background: #d8e0e8; margin: 1.25rem 0 .75rem; }
+  .total-bar { display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #4a6070; }
+  .total-hrs { font-weight: 700; color: #02283B; font-size: 13px; }
+</style>
+</head>
+<body>
+
+<div class="track-tabs">
+  <div class="tab active" onclick="show('foundation', this)">Boomi Foundations</div>
+  <div class="tab" onclick="show('a', this)">A · Data Management</div>
+  <div class="tab" onclick="show('b', this)">B · MFT & B2B/EDI</div>
+  <div class="tab" onclick="show('c', this)">C · API Management</div>
+  <div class="tab" onclick="show('d', this)">D · Integration & Automation</div>
+  <div class="tab" onclick="show('e', this)">E · Platform Narrative</div>
+</div>
+
+<!-- Foundation -->
+<div id="foundation" class="track-panel active">
+  <div class="track-header">
+    <div class="track-title">Boomi Foundations</div>
+    <div class="track-meta">Mandatory for all · complete before starting any domain track</div>
+  </div>
+  <div class="courses">
+    <div class="course-card">
+      <div class="course-top"><span class="course-name">Getting Started with the Boomi Platform</span><span class="badge badge-f">Foundational</span></div>
+      <div class="course-dur">30 min</div>
+      <a class="course-link" href="https://train.boomi.com/getting-started-with-the-boomi-platform" target="_blank">Open course →</a>
+    </div>
+    <div class="course-card">
+      <div class="course-top"><span class="course-name">Integration Essentials</span><span class="badge badge-f">Foundational</span></div>
+      <div class="course-dur">3 hr 5 min</div>
+      <a class="course-link" href="https://train.boomi.com/integration-essentials" target="_blank">Open course →</a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="total-bar"><span>2 courses · total commitment</span><span class="total-hrs">~3.5 hrs</span></div>
+</div>
+
+<!-- Track A -->
+<div id="a" class="track-panel">
+  <div class="track-header">
+    <div class="track-title">Track A · Data Management</div>
+    <div class="track-meta">Domain experts: Scott · Salomé · Ale<br>MDM, Data Hub, golden records, data governance & stewardship</div>
+  </div>
+  <div class="courses">
+    <div class="course-card">
+      <div class="course-top"><span class="course-name">DataHub Essentials</span><span class="badge badge-f">Foundational</span></div>
+      <div class="course-dur">35 min</div>
+      <a class="course-link" href="https://train.boomi.com/datahub-essentials" target="_blank">Open course →</a>
+    </div>
+    <div class="course-card">
+      <div class="course-top"><span class="course-name">Intro to Data Catalog and Preparation</span><span class="badge badge-f">Foundational</span></div>
+      <div class="course-dur">45 min</div>
+      <a class="course-link" href="https://train.boomi.com/intro-to-boomi-data-catalog-and-preparation" target="_blank">Open course →</a>
+    </div>
+    <div class="course-card">
+      <div class="course-top"><span class="course-name">Data Governance: Securing Success</span><span class="badge badge-i">Intermediate</span></div>
+      <div class="course-dur">30 min</div>
+      <a class="course-link" href="https://train.boomi.com/data-governance-securing-success" target="_blank">Open course →</a>
+    </div>
+    <div class="course-card">
+      <div class="course-top"><span class="course-name">Data Stewardship</span><span class="badge badge-i">Intermediate</span></div>
+      <div class="course-dur">25 min</div>
+      <a class="course-link" href="https://train.boomi.com/data-stewardship" target="_blank">Open course →</a>
+    </div>
+    <div class="course-card">
+      <div class="course-top"><span class="course-name">DataHub Profiling: Your Insight Engine</span><span class="badge badge-i">Intermediate</span></div>
+      <div class="course-dur">30 min</div>
+      <a class="course-link" href="https://train.boomi.com/data-profiling-your-insight-engine" target="_blank">Open course →</a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="total-bar"><span>5 courses · total commitment</span><span class="total-hrs">~3 hrs</span></div>
+</div>
+
+<!-- Track B -->
+<div id="b" class="track-panel">
+  <div class="track-header">
+    <div class="track-title">Track B · MFT & B2B/EDI</div>
+    <div class="track-meta">Domain expert: Ian<br>MFT, EDI, B2B trading partner connectivity</div>
+  </div>
+  <div class="courses">
+    <div class="course-card">
+      <div class="course-top"><span class="course-name">EDI Essentials</span><span class="badge badge-f">Foundational</span></div>
+      <div class="course-dur">45 min</div>
+      <a class="course-link" href="https://train.boomi.com/edi-essentials" target="_blank">Open course →</a>
+    </div>
+    <div class="course-card">
+      <div class="course-top"><span class="course-name">B2B/EDI Dashboard</span><span class="badge badge-f">Foundational</span></div>
+      <div class="course-dur">30 min</div>
+      <a class="course-link" href="https://train.boomi.com/b2b-edi-dashboard" target="_blank">Open course →</a>
+    </div>
+    <div class="course-card">
+      <div class="course-top"><span class="course-name">Working with EDI Trading Partners</span><span class="badge badge-f">Foundational</span></div>
+      <div class="course-dur">1 hr</div>
+      <a class="course-link" href="https://train.boomi.com/working-with-edi-trading-partners" target="_blank">Open course →</a>
+    </div>
+    <div class="course-card">
+      <div class="course-top"><span class="course-name">Boomi MFT: Automated File Transfer (AFT) Essentials</span><span class="badge badge-f">Foundational</span></div>
+      <div class="course-dur">1 hr 30 min</div>
+      <a class="course-link" href="https://train.boomi.com/boomi-mft-fundamentals-of-managed-file-transfer" target="_blank">Open course →</a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="total-bar"><span>4 courses · total commitment</span><span class="total-hrs">~4 hrs</span></div>
+</div>
+
+<!-- Track C -->
+<div id="c" class="track-panel">
+  <div class="track-header">
+    <div class="track-title">Track C · API Management</div>
+    <div class="track-meta">Domain expert: Open role<br>API gateway, lifecycle management, developer portal, security & governance</div>
+  </div>
+  <div class="courses">
+    <div class="course-card">
+      <div class="course-top"><span class="course-name">API Management Recommended Practices</span><span class="badge badge-a">Advanced</span></div>
+      <div class="course-dur">40 min</div>
+      <a class="course-link" href="https://train.boomi.com/api-management-recommended-practices" target="_blank">Open course →</a>
+    </div>
+    <div class="course-card">
+      <div class="course-top"><span class="course-name">Using API Metrics to Analyze API Calls</span><span class="badge badge-a">Advanced</span></div>
+      <div class="course-dur">30 min</div>
+      <a class="course-link" href="https://train.boomi.com/using-api-metrics-to-analyze-api-calls" target="_blank">Open course →</a>
+    </div>
+    <div class="course-card">
+      <div class="course-top"><span class="course-name">Cloud API Management</span><span class="badge badge-a">Advanced</span></div>
+      <div class="course-dur">6 hr</div>
+      <a class="course-link" href="https://train.boomi.com/cloud-api-management" target="_blank">Open course →</a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="total-bar"><span>3 courses · total commitment</span><span class="total-hrs">~7 hrs</span></div>
+</div>
+
+<!-- Track D -->
+<div id="d" class="track-panel">
+  <div class="track-header">
+    <div class="track-title">Track D · Integration & Automation</div>
+    <div class="track-meta">Domain expert: Open role<br>iPaaS, low-code automation, event-driven architecture, process orchestration</div>
+  </div>
+  <div class="courses">
+    <div class="course-card">
+      <div class="course-top"><span class="course-name">Introduction to Task Automation</span><span class="badge badge-f">Foundational</span></div>
+      <div class="course-dur">30 min</div>
+      <a class="course-link" href="https://train.boomi.com/introduction-to-task-automation" target="_blank">Open course →</a>
+    </div>
+    <div class="course-card">
+      <div class="course-top"><span class="course-name">Data Pipeline Essentials</span><span class="badge badge-f">Foundational</span></div>
+      <div class="course-dur">3 hr 15 min</div>
+      <a class="course-link" href="https://train.boomi.com/data-pipeline-essentials" target="_blank">Open course →</a>
+    </div>
+    <div class="course-card">
+      <div class="course-top"><span class="course-name">Building an AI Agent with Agentstudio</span><span class="badge badge-f">Foundational</span></div>
+      <div class="course-dur">2 hr</div>
+      <a class="course-link" href="https://train.boomi.com/building-an-ai-agent-with-agentstudio" target="_blank">Open course →</a>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="total-bar"><span>3 courses · total commitment</span><span class="total-hrs">~6 hrs</span></div>
+</div>
+
+<!-- Track E -->
+<div id="e" class="track-panel">
+  <div class="track-header">
+    <div class="track-title">Track E · Platform Narrative</div>
+    <div class="track-meta">Domain expert: Michael<br>Platform story, talk tracks, Sales Plays, field enablement, content strategy</div>
+  </div>
+  <div class="courses">
+    <div class="course-card tbd">
+      <div class="course-top"><span class="course-name">Cross-Domain Talk Track</span><span class="badge badge-d">In development</span></div>
+      <div class="course-tbd-note">Internally developed · coming Q2 2026</div>
+    </div>
+    <div class="course-card tbd">
+      <div class="course-top"><span class="course-name">Day-in-the-Life Demo Scenarios</span><span class="badge badge-d">In development</span></div>
+      <div class="course-tbd-note">Internally developed · coming Q2 2026</div>
+    </div>
+    <div class="course-card tbd">
+      <div class="course-top"><span class="course-name">Coverage & Escalation Map</span><span class="badge badge-d">In development</span></div>
+      <div class="course-tbd-note">Internally developed · coming Q2 2026</div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="total-bar"><span>Content in development</span><span class="total-hrs">TBD</span></div>
+</div>
+
+<script>
+  function show(id, el) {
+    document.querySelectorAll('.track-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    el.classList.add('active');
+  }
+</script>
+</body>
+</html>
